@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-applicaton-with-docker",
+  "name": "nodejs app to help HA with docker",
   "version": "1.0.0",
   "description": "Selftuts",
   "main": "server.js",
@@ -10,6 +10,6 @@
   "dependencies": {
     "express": "^4.16.3"
   },
-  "author": "Raj Ranjan",
+  "author": "KK based on original config by Raj Ranjan",
   "license": "ISC"
 }
