@@ -1,7 +1,7 @@
 {
   "name": "nodejs app to help HA with docker",
   "version": "1.0.0",
-  "description": "Selftuts",
+  "description": "Basic HA helper",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
