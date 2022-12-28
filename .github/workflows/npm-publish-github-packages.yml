@@ -8,13 +8,16 @@ on: push
 jobs:
   build-HA_AutomationHelper:
     runs-on: ubuntu-latest
+    container: node:16 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run test
+      - run: node --version 
+      - run: npm --version 
+    #  - uses: actions/checkout@v3
+    #  - uses: actions/setup-node@v3
+    #    with:
+    #      node-version: 16
+    #  - run: npm ci
+    #  - run: npm run test
       #  - run: node server.js
 
 
