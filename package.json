@@ -4,12 +4,12 @@
   "description": "Basic HA helper",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.16.3"
   },
-  "author": "KK  based on original config by Raj Ranjan",
+  "author": "KK based on original config by Raj Ranjan",
   "license": "ISC"
 }
