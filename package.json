@@ -1,5 +1,5 @@
 {
-  "name": "nodejs app to help HA with docker",
+  "name": "nodejs-app-to-help-ha-with-docker",
   "version": "1.0.0",
   "description": "Basic HA helper",
   "main": "server.js",
@@ -12,7 +12,7 @@
   },
 
   "author": "KK",
-  "license": "ISC"
+  "license": "ISC",
   "devDependencies": {
     "jest": "^27.4.3"
   }
