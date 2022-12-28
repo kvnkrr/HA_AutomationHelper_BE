@@ -10,6 +10,6 @@
   "dependencies": {
     "express": "^4.16.3"
   },
-  "author": "KK based on original config by Raj Ranjan",
+  "author": "KK  based on original config by Raj Ranjan",
   "license": "ISC"
 }
