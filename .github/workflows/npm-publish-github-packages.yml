@@ -7,28 +7,42 @@ on:
   push: 
     
 
+#jobs:
+
+ # build:
+
+  #    runs-on: ubuntu-latest
+
+   #   strategy:
+    #    matrix:
+     #     node-version: [16.x]
+      #    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+      #steps:
+      #- uses: actions/checkout@v3
+      #- name: Use Node.js ${{ matrix.node-version }}
+      #  uses: actions/setup-node@v3
+      #  with:
+      #    node-version: ${{ matrix.node-version }}
+      #    cache: 'npm'
+      #- run: npm ci
+      #- run: npm test
+      
 jobs:
-
   build:
-
-      runs-on: ubuntu-latest
-
-      strategy:
-        matrix:
-          node-version: [16.x]
-          # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-      steps:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 14, 16, 18 ]
+    name: Node ${{ matrix.node }} sample
+    steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: ${{ matrix.node }}
       - run: npm ci
       - run: npm test
-      
-
 
 
   #build-HA_AutomationHelper:
