@@ -4,11 +4,13 @@
   "description": "Basic HA helper",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "start": "node server.js"
-  },
+    "test": "jest"
+    },
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3"
   },
   "author": "KK based on original config by Raj Ranjan",
   "license": "ISC"
