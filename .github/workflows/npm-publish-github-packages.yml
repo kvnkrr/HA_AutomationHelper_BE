@@ -38,8 +38,8 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         # name of repo on dockerhub 
         repository: kvnkrruk/ha_automationhelper
-        # where the dockerfile is to build from 
-        dockerfile: HA_AutomationHelper/Dockerfile
+        # where the dockerfile is to build from.
+        dockerfile: Dockerfile
         tags: latest
 
 
