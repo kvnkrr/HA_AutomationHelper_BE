@@ -1,4 +1,4 @@
- #  Home Assistant simple nodejs application with docker Conatiner /sits with other integrated home automation systems 
+ #  Personal Home Assistant Helper nodejs application with docker Conatiner /sits with other integrated home automation systems 
 
 
 # Installation
