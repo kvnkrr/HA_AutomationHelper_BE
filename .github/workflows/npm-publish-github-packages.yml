@@ -39,7 +39,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         # name of repo on dockerhub 
-        repository: kvnkrruk/ha_automationhelper
+        repository: kvnkrruk/ha_automationhelperArm64
         # where the dockerfile is to build from.
         dockerfile: Dockerfile
         tags: latest
