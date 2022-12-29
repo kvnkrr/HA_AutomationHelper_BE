@@ -1,4 +1,4 @@
-FROM FROM --platform=linux/amd64 python:alpine:latest
+FROM --platform=linux/amd64 python:alpine:latest
 
 RUN apk add --no-cache nodejs npm
 
