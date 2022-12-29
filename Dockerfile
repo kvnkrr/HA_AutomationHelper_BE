@@ -1,4 +1,5 @@
-FROM alpine:latest
+FROM FROM --platform=linux/amd64 alpine:latest
+
 RUN apk add --no-cache nodejs npm
 
 
