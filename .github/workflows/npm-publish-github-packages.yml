@@ -24,7 +24,7 @@ jobs:
      - run: npm ci
      - run: npm test
 
-   DeployHomeAutomationHelper:
+  DeployHomeAutomationHelper:
     name: Build and Deploy Docker image 
     runs-on: ubuntu-latest
     steps:
