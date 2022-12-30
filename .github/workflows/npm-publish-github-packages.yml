@@ -24,24 +24,25 @@ jobs:
      - run: npm ci
      - run: npm test
 
-  DeployHomeAutomationHelper:
-    name: Build and Deploy Docker image 
+  Buildandpushtodockerhub:
+    name: Build  
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
     #   use the github marketplace docker action with context
     - name: Build and push Docker image
-      uses: docker/build-push-action@v1
+      uses: docker/build-push-action@v3
       with:
-        # build specifically for Pi 4 Arm Architecture 
-        platforms: linux/arm64
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         # name of repo on dockerhub 
-        repository: kvnkrruk/ha_automationhelperArm64
-        # where the dockerfile is to build from.
+        repository: kvnkrruk/ha_automationhelper
+        # where the dockerfile is to build from not in folder  
         dockerfile: Dockerfile
+        context: .
+        platforms: linux/amd64,linux/arm64
+        push: true
         tags: latest
 
 
