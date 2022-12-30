@@ -42,7 +42,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build and push Docker image
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v1
       with: 
         # name of repo on dockerhub 
         repository: kvnkrruk/ha_automationhelper
