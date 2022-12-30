@@ -28,20 +28,21 @@ jobs:
     name: Build and Deploy Docker image 
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    #   use the github marketplace docker action with context
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        # name of repo on dockerhub 
-        repository: kvnkrruk/ha_automationhelper
-        # where the dockerfile is to build from.
-        dockerfile: Dockerfile
-        tags: latest
-
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: install buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+      - name: login to docker hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: build the image
+        run: |
+          docker buildx build --push \
+            --tag kvnkrruk/ha_automationhelper:latest \
+            --platform linux/amd64,linux/arm64 .
+      #tag is repo in dockerhub.
 
   #build-HA_AutomationHelper:
    # runs-on: ubuntu-latest
