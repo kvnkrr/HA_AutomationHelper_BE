@@ -9,7 +9,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [16.x]
@@ -26,7 +26,7 @@ jobs:
 
   DeployHomeAutomationHelper:
     name: Build and Deploy Docker image 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout code
         uses: actions/checkout@v2
