@@ -8,7 +8,7 @@ on:
   push: 
     
 jobs:
-  build:
+  checkout_build_app:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,7 @@ jobs:
      - run: npm ci
      - run: npm test
 
-  DeployHomeAutomationHelper:
+  container_arm64_architecture_app_to registry:
     name: Build and Deploy Docker image 
     runs-on: ubuntu-latest
     steps:
@@ -42,25 +42,18 @@ jobs:
           docker buildx build --push \
             --tag kvnkrruk/ha_automationhelper:latest \
             --platform linux/amd64,linux/arm64 .
-      #tag is repo in dockerhub.
-
-  #build-HA_AutomationHelper:
-   # runs-on: ubuntu-latest
-   # container: node:16 
-   # steps:
-   #   - uses: actions/checkout@v3
-   #   - uses: actions/setup-node@v3
-    #  - run: node --version 
-     # - run: npm --version 
-     # - run: npm ci 
-     # - run: npm  test
-      
-    #  - uses: actions/checkout@v3
-    #  - uses: actions/setup-node@v3
-    #    with:
-    #      node-version: 16
-    #  - run: npm ci
-    #  - run: npm run test
-      #  - run: node server.js
-
+  ssh_container_to_raspberry_pi4:
+    name: update server
+    needs: "container_arm64_architecture_app_to"
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: bash update.sh
+  
 
