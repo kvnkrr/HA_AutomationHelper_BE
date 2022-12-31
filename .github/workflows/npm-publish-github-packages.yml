@@ -44,7 +44,7 @@ jobs:
             --platform linux/amd64,linux/arm64 .
   ssh_container_to_rpfour:
     name: update server
-    needs: "container_armsixtyfour_architecture_app_to"
+    needs: "container_armsixtyfour_architecture_app_to_registry"
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
