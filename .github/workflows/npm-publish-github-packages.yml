@@ -24,7 +24,7 @@ jobs:
      - run: npm ci
      - run: npm test
 
-  container_armsixtyfour_architecture_app_to registry:
+  container_armsixtyfour_architecture_app_to_registry:
     name: Build and Deploy Docker image 
     runs-on: ubuntu-latest
     steps:
