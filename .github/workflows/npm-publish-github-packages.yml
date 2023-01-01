@@ -54,6 +54,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: echo "${{ secrets.PASSWORD }}""| sudo -S ./update.sh
+        script: echo "${{ secrets.PASSWORD }}" | sudo -S ./update.sh
   
 
