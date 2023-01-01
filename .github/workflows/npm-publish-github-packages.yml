@@ -54,6 +54,9 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: bash sudo ./update.sh
+        script: |
+          whoami
+          ls -al
+          echo ${{ secrets.PASSWORD }} | sudo -S cp /root/.vimrc root_vimrc2 
   
 
