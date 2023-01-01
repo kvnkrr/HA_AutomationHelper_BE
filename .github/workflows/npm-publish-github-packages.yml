@@ -49,11 +49,13 @@ jobs:
     steps:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v0.1.6
+      env:
+        pass: ${{ secrets.PASSWORD }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: echo ${{ secrets.PASSWORD }} | sudo -S ./update.sh
+        script: echo "$pass" | sudo -S ./update.sh
   
 
