@@ -54,9 +54,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: |
-          whoami
-          ls -al
-          echo ${{ secrets.PASSWORD }} | sudo -S ./update.sh
+        script: echo "${{ secrets.PASSWORD }}""| sudo -S ./update.sh
   
 
