@@ -57,6 +57,6 @@ jobs:
         script: |
           whoami
           ls -al
-          echo ${{ secrets.PASSWORD }} | sudo -S cp /root/.vimrc root_vimrc2 
+          echo ${{ secrets.PASSWORD }} | sudo -S sudo ./update.sh
   
 
