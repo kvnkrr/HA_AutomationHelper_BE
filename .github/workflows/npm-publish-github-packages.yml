@@ -55,7 +55,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         command_timeout: 200m
-        script whoami
+        script: whoami
   #      script: echo "${{ secrets.PASSWORD }}" | sudo -S ./update.sh
   
 
