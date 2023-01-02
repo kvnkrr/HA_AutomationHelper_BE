@@ -55,10 +55,10 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         command_timeout: 200m
-          echo "${{ secrets.PASSWORD }}" | sudo -S docker stop my-helper-app
-          echo "${{ secrets.PASSWORD }}" | sudo -S docker rm   my-helper-app
-          echo "${{ secrets.PASSWORD }}" | sudo -S docker rmi  kvnkrruk/ha_automationhelper
-          echo "${{ secrets.PASSWORD }}" | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app kvnkrruk/ha_automationhelper
+          echo ${{ secrets.PASSWORD }} | sudo -S docker stop my-helper-app
+          echo ${{ secrets.PASSWORD }} | sudo -S docker rm   my-helper-app
+          echo ${{ secrets.PASSWORD }} | sudo -S docker rmi  kvnkrruk/ha_automationhelper
+          echo ${{ secrets.PASSWORD }} | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app kvnkrruk/ha_automationhelper
          # script: echo "${{ secrets.PASSWORD }}" | sudo -S ./update.sh
   
 
