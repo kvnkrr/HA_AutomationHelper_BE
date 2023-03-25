@@ -40,7 +40,7 @@ jobs:
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag kvnkrruk/ha_automationhelper:latest \
+            --tag kvnkrruk/ha_automationhelper_be:latest \
             --platform linux/amd64,linux/arm64 .
   ssh_container_to_rpfour:
     name: update server
@@ -60,5 +60,5 @@ jobs:
   
           # echo ${{ secrets.PASSWORD }} | sudo -S docker stop my-helper-app
           #echo ${{ secrets.PASSWORD }} | sudo -S docker rm   my-helper-app
-          #echo ${{ secrets.PASSWORD }} | sudo -S docker rmi  kvnkrruk/ha_automationhelper
-          #echo ${{ secrets.PASSWORD }} | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app kvnkrruk/ha_automationhelper
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker rmi  kvnkrruk/ha_automationhelper_be
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app kvnkrruk/ha_automationhelper_be
