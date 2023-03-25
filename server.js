@@ -41,6 +41,6 @@ app.get('/ookla', (req, res) => {
   res.sendFile('./homePage.png', {root: __dirname});
 });
 
-app.listen(2090, () => {
-  console.log('Server listening on port 2090');
+app.listen(9005, () => {
+  console.log('Server listening on port 9005');
 });
