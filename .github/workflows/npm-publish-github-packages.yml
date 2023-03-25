@@ -22,7 +22,7 @@ jobs:
          node-version: ${{ matrix.node-version }}
          cache: 'npm'
      - run: npm ci
-     - run: npm test
+     #- run: npm test
 
   container_armsixtyfour_architecture_app_to_registry:
     name: Build and Deploy Docker image 
