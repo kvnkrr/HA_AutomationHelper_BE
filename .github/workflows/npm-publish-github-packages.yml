@@ -56,9 +56,9 @@ jobs:
         port: ${{ secrets.PORT }}
         command_timeout: 200m
         script: 
-          #echo "${{ secrets.PASSWORD }}" | sudo -S ./Update.sh
-          echo ${{ secrets.PASSWORD }} | sudo -S docker stop my-helper-app
-          echo ${{ secrets.PASSWORD }} | sudo -S docker rm   my-helper-app
-          echo ${{ secrets.PASSWORD }} | sudo -S docker rmi  kvnkrruk/ha_automationhelper_be
-          echo ${{ secrets.PASSWORD }} | sudo -S docker create my_helper_network
-          echo ${{ secrets.PASSWORD }} | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app --network my_helper_network kvnkrruk/ha_automationhelper_be
+          echo "${{ secrets.PASSWORD }}" | sudo -S ./Update.sh
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker stop my-helper-app
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker rm   my-helper-app
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker rmi  kvnkrruk/ha_automationhelper_be
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker create my_helper_network
+          #echo ${{ secrets.PASSWORD }} | sudo -S docker run -t -d -p 9002:9005 --name my-helper-app --network my_helper_network kvnkrruk/ha_automationhelper_be
