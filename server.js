@@ -23,12 +23,13 @@ function getFastComSpeed() {
 
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'Access-Control-Allow-Origin: http://raspberrypi44.duckdns.org:3000');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
 
 app.get('/refuge', (req, res) => {
+  console.log("Server Has Been Called from the client");
   res.sendFile('./refugeSchedule.png', {root: __dirname});
 });
 
