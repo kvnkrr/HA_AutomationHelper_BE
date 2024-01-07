@@ -32,7 +32,7 @@ app.use((req, res, next) => {
   /*return content for Home automation */
 
   app.get('/refuge', (req, res) => {
-  console.log("Server Has Been Called from the client");
+  console.log("Server Has Been Called from the Home automation client");
   res.sendFile('./refugeSchedule.png', {root: __dirname});
 });
 
